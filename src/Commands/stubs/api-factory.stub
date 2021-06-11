@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ factoryNamespace }};
+
+use DIJ\ApiFactories\ApiFactory;
+
+class {{ factory }}Factory extends ApiFactory
+{
+    /**
+     * Define the response's default state.
+     *
+     * @return array<string,mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            //
+        ];
+    }
+}

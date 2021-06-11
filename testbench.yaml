@@ -1,0 +1,2 @@
+providers:
+  - Dij\ApiFactories\ApiFactoriesServiceProvider

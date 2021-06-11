@@ -1,0 +1,58 @@
+{
+    "name": "deinternetjongens/laravel-api-factories",
+    "description": "This package provides the database factory experience to fake Http calls in your testsuite",
+    "keywords": [
+        "DIJ",
+        "laravel",
+        "laravel-api-factories"
+    ],
+    "homepage": "https://github.com/deinternetjongens/laravel-api-factories",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Pijning",
+            "email": "support@dij.digital",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "spatie/laravel-package-tools": "^1.4.3",
+        "illuminate/contracts": "^8.37"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.2",
+        "nunomaduro/collision": "^5.3",
+        "orchestra/testbench": "^6.15",
+        "phpunit/phpunit": "^9.3",
+        "spatie/laravel-ray": "^1.9",
+        "vimeo/psalm": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "DIJ\\ApiFactories\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DIJ\\ApiFactories\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DIJ\\ApiFactories\\ApiFactoriesServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

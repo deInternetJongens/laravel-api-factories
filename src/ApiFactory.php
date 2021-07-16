@@ -118,7 +118,7 @@ abstract class ApiFactory
         }
 
         return array_map(
-            fn($_) => $this->state($attributes)->getExpandedAttributes(),
+            fn ($_) => $this->state($attributes)->getExpandedAttributes(),
             range(1, $this->count)
         );
     }
@@ -161,7 +161,7 @@ abstract class ApiFactory
 
         $instances = new Collection(
             array_map(
-                fn($_) => $this->makeInstance(),
+                fn ($_) => $this->makeInstance(),
                 range(1, $this->count)
             )
         );

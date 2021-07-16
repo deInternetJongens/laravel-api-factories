@@ -2,9 +2,9 @@
 
 namespace DIJ\ApiFactories\Tests;
 
+use DIJ\ApiFactories\ApiFactoriesServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use DIJ\ApiFactories\ApiFactoriesServiceProvider;
 
 class TestCase extends Orchestra
 {

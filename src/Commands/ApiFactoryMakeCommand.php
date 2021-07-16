@@ -4,7 +4,6 @@ namespace DIJ\ApiFactories\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
-use Symfony\Component\Console\Input\InputOption;
 
 class ApiFactoryMakeCommand extends GeneratorCommand
 {

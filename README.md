@@ -1,12 +1,12 @@
-<p align="center"><img src="/art/socialcard.png" alt="Social Card of Laravel Api Factories"></p>
+<p align="center"><img src="https://banners.beyondco.de/Api%20Factories.png?theme=light&packageManager=composer+require&packageName=deinternetjongens%2Flaravel-api-factories&pattern=architect&style=style_1&description=Get+the+database+factories+experience+with+fake+Http+call+in+your+testsuite&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg" alt="Social Card of Laravel Api Factories"></p>
 
 
 # Laravel Api Factories
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/dij/laravel-api-factories.svg?style=flat-square)](https://packagist.org/packages/dij/laravel-api-factories)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/dij/laravel-api-factories/run-tests?label=tests)](https://github.com/dij/laravel-api-factories/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/dij/laravel-api-factories/Check%20&%20fix%20styling?label=code%20style)](https://github.com/dij/laravel-api-factories/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/dij/laravel-api-factories.svg?style=flat-square)](https://packagist.org/packages/dij/laravel-api-factories)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/deinternetjongens/laravel-api-factories.svg?style=flat-square)](https://packagist.org/packages/deinternetjongens/laravel-api-factories)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/deinternetjongens/laravel-api-factories/run-tests?label=tests)](https://github.com/deinternetjongens/laravel-api-factories/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/deinternetjongens/laravel-api-factories/Check%20&%20fix%20styling?label=code%20style)](https://github.com/deinternetjongens/laravel-api-factories/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/deinternetjongens/laravel-api-factories.svg?style=flat-square)](https://packagist.org/packages/deinternetjongens/laravel-api-factories)
 
 This package provides the database factory experience to fake Http calls in your testsuite
 
@@ -15,7 +15,7 @@ This package provides the database factory experience to fake Http calls in your
 You can install the package via composer:
 
 ```bash
-composer require dij/laravel-api-factories
+composer require deinternetjongens/laravel-api-factories
 ```
 
 ## Usage

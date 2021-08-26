@@ -90,6 +90,11 @@ abstract class ApiFactory
         return (new static)->state($attributes)->configure();
     }
 
+    public static function factory($attributes = []): self
+    {
+        return static::new($attributes);
+    }
+
     /**
      * Get a new factory instance for the given number of models.
      *

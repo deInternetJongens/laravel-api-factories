@@ -40,6 +40,10 @@ abstract class ApiFactory
      */
     protected Collection $afterMaking;
 
+    protected ?string $wrapper = null;
+
+    private $children = null;
+
     /**
      * The current Faker instance.
      *
@@ -58,11 +62,13 @@ abstract class ApiFactory
     public function __construct(
         ?int $count = null,
         ?Collection $states = null,
-        ?Collection $afterMaking = null
+        ?Collection $afterMaking = null,
+        $children = null
     ) {
         $this->count = $count;
         $this->states = $states ?: new Collection;
         $this->afterMaking = $afterMaking ?: new Collection;
+        $this->children = $children;
         $this->faker = $this->withFaker();
     }
 
@@ -118,7 +124,7 @@ abstract class ApiFactory
         }
 
         return array_map(
-            fn ($_) => $this->state($attributes)->getExpandedAttributes(),
+            fn($_) => $this->state($attributes)->getExpandedAttributes(),
             range(1, $this->count)
         );
     }
@@ -143,12 +149,12 @@ abstract class ApiFactory
     public function make(array $attributes = [])
     {
         if (! empty($attributes)) {
-            return $this->state($attributes)->make([]);
+            return $this->wrapInstance($this->state($attributes)->make([]));
         }
 
         if ($this->count === null) {
             return tap(
-                $this->makeInstance(),
+                $this->wrapInstance($this->makeInstance()),
                 function ($instance) {
                     $this->callAfterMaking(collect([$instance]));
                 }
@@ -156,19 +162,34 @@ abstract class ApiFactory
         }
 
         if ($this->count < 1) {
-            return new Collection();
+            return $this->wrapInstance(new Collection());
         }
 
         $instances = new Collection(
             array_map(
-                fn ($_) => $this->makeInstance(),
+                fn($_) => $this->makeInstance(),
                 range(1, $this->count)
             )
         );
 
         $this->callAfterMaking($instances);
 
-        return $instances;
+        return $this->wrapInstance($instances);
+    }
+
+    public function wrapInstance($children)
+    {
+        if ($this->wrapper && class_exists($this->wrapper)) {
+            return (new $this->wrapper)->newInstance(['children' => $children])->make();
+        }
+
+        if ($this->wrapper && is_string($this->wrapper)) {
+            return [
+                $this->wrapper => $children
+            ];
+        }
+
+        return $children;
     }
 
     public function json(array $attributes = [])
@@ -316,6 +337,11 @@ abstract class ApiFactory
         return $this->newInstance(['count' => $count]);
     }
 
+    protected function children()
+    {
+        return $this->children;
+    }
+
     /**
      * Create a new instance of the factory builder with the given mutated properties.
      *
@@ -331,6 +357,7 @@ abstract class ApiFactory
                         'count' => $this->count,
                         'states' => $this->states,
                         'afterMaking' => $this->afterMaking,
+                        'children' => $this->children,
                     ],
                     $arguments
                 )

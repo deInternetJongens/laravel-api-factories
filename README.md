@@ -1,6 +1,5 @@
 <p align="center"><img src="https://banners.beyondco.de/Api%20Factories.png?theme=light&packageManager=composer+require&packageName=deinternetjongens%2Flaravel-api-factories&pattern=architect&style=style_1&description=Get+the+database+factories+experience+with+fake+Http+call+in+your+testsuite&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg" alt="Social Card of Laravel Api Factories"></p>
 
-
 # Laravel Api Factories
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deinternetjongens/laravel-api-factories.svg?style=flat-square)](https://packagist.org/packages/deinternetjongens/laravel-api-factories)
@@ -40,6 +39,8 @@ use DIJ\ApiFactories\ApiFactory;
 
 class NewsPostResponseFactory extends ApiFactory
 {
+    protected ?string $wrapper = ResponseFactoryWrapper::class;
+    
     /**
      * Define the response's default state.
      *
@@ -54,6 +55,26 @@ class NewsPostResponseFactory extends ApiFactory
             'author' => $this->faker->name,
             'likes' => $this->faker->randomNumber(2),
             'published_at' => $this->faker->dateTime(),
+        ];
+    }
+}
+
+class ResponseFactoryWrapper extends ApiFactory
+{
+    protected ?string $wrapper = 'data';
+    
+    /**
+     * Define the response's default state.
+     *
+     * @return array<string,mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'items' => $this->children(),
+            'meta' => [
+                'total' => rand(0, 10),
+            ]
         ];
     }
 }

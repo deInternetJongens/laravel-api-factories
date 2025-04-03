@@ -3,8 +3,9 @@
 # Laravel Api Factories
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deinternetjongens/laravel-api-factories.svg?style=flat-square)](https://packagist.org/packages/deinternetjongens/laravel-api-factories)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/deinternetjongens/laravel-api-factories/run-tests?label=tests)](https://github.com/deinternetjongens/laravel-api-factories/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/deinternetjongens/laravel-api-factories/Check%20&%20fix%20styling?label=code%20style)](https://github.com/deinternetjongens/laravel-api-factories/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+![PHP Version Support](https://img.shields.io/packagist/php-v/deinternetjongens/laravel-api-factories?style=flat-square)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/deinternetjongens/laravel-api-factories/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/deinternetjongens/laravel-api-factories/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/deinternetjongens/laravel-api-factories/php-cs-fixer.yml?branch=main&label=Codestyle&style=flat-square)](https://github.com/deinternetjongens/laravel-api-factories/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/deinternetjongens/laravel-api-factories.svg?style=flat-square)](https://packagist.org/packages/deinternetjongens/laravel-api-factories)
 
 This package provides the database factory experience to fake Http calls in your testsuite
